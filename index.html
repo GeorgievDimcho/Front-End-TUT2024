@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Our Restaurant</h1>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li><a href="#" onclick="loadContent('appetizers')">Appetizers</a></li>
+            <li><a href="#" onclick="loadContent('main-courses')">Main Courses</a></li>
+            <li><a href="#" onclick="loadContent('desserts')">Desserts</a></li>
+            <li><a href="#" onclick="loadContent('drinks')">Drinks</a></li>
+        </ul>
+    </nav>
+    <section id="content">
+        <h2>Welcome!</h2>
+        <p>Select a menu item to see more details.</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 Our Restaurant</p>
+    </footer>
+
+    <script>
+        function loadContent(menuItem) {
+            const content = document.getElementById('content');
+            switch (menuItem) {
+                case 'appetizers':
+                    content.innerHTML = '<h2>Appetizers</h2><p>Delicious starters to begin your meal.</p>';
+                    break;
+                case 'main-courses':
+                    content.innerHTML = '<h2>Main Courses</h2><p>Hearty dishes to satisfy your hunger.</p>';
+                    break;
+                case 'desserts':
+                    content.innerHTML = '<h2>Desserts</h2><p>Sweet treats to end your meal on a high note.</p>';
+                    break;
+                case 'drinks':
+                    content.innerHTML = '<h2>Drinks</h2><p>A selection of beverages to complement your meal.</p>';
+                    break;
+                default:
+                    content.innerHTML = '<h2>Welcome!</h2><p>Select a menu item to see more details.</p>';
+            }
+        }
+    </script>
+</body>
+
+</html>
